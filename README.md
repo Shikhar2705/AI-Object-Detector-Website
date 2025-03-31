@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Object Detection Website
+
+This project is a web-based AI object detection application that uses TensorFlow.js and the COCO-SSD model to detect objects in real-time through a webcam feed. The application highlights detected objects with bounding boxes and labels them with their respective class names.
+
+## Features
+
+- Real-time object detection using the COCO-SSD model.
+- Highlights detected objects with bounding boxes.
+- Differentiates between "person" and other objects with distinct colors.
+- Responsive design for various screen sizes.
+
+## Technologies Used
+
+- **React**: For building the user interface.
+- **Next.js**: For server-side rendering and routing.
+- **TensorFlow.js**: For running the COCO-SSD model in the browser.
+- **Webcam**: For capturing live video feed.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v14 or later)
+- npm or yarn package manager
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone <repository-url>
+   cd object-detection
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Start the development server:
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Open your browser and navigate to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```
+   http://localhost:3000
+   ```
+
+3. Allow camera access when prompted to enable the webcam feed.
+
+## Project Structure
+
+- **`components/object-detection.js`**: Contains the main object detection component.
+- **`utils/render-predictions.js`**: Handles rendering of predictions on the canvas.
+- **`app/page.js`**: The main entry point for the application.
+
+## Customization
+
+- Modify the detection threshold in `components/object-detection.js` by changing the value passed to `net.detect`.
+- Customize the bounding box colors in `utils/render-predictions.js`.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+
+- [TensorFlow.js](https://www.tensorflow.org/js) for providing the COCO-SSD model.
+- [Next.js](https://nextjs.org/) for the framework.
+- [React Webcam](https://github.com/mozmorris/react-webcam) for webcam integration.
